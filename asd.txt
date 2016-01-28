@@ -1,0 +1,351 @@
+type of volunteering activity
+name and contant info, at least email
+teamleader
+a list of all info
+can open it on excel
+dont want everybody to see
+my name and contant info and wsu fan club
+survey not anoumus
+php, no special framework
+include personal major info
+make it work on all major browsers
+
+
+
+
+
+
+NOT(p) --- 
+
+p AND q --- P^Q --- p.q
+
+p OR q --- pVq --- p + q
+
+distrubutive laws
+A^(bVC) = (A^B)U(A^C)
+AU(B^C) = (AUB)^(AUC)
+
+morgan's laws
+____(AUB) = _A ^ _B
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int g;
+          main()
+          {
+             int a,b,c;
+             a = 1; b = 2;
+             c = a + b;
+             printf("c=%d\n", c);
+          }
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int g = 3;
+          main()
+          {
+             int a,b,c;
+             a = 1; b = 2;
+             c = a + b;
+             printf("c=%d\n", c);
+          }
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int g[10000];
+          main()
+          {
+             int a,b,c;
+             a = 1; b = 2;
+             c = a + b;
+             printf("c=%d\n", c);
+          }
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int g[10000] = {4};
+          main()
+          {
+             int a,b,c;
+             a = 1; b = 2;
+             c = a + b;
+             printf("c=%d\n", c);
+          }
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int g;
+          main()
+          {
+             int a,b,c, d[10000];
+             a = 1; b = 2;
+             c = a + b;
+             printf("c=%d\n", c);
+          }
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int g;
+          main()
+          {
+             static int a,b,c, d[10000];
+             a = 1; b = 2;
+             c = a + b;
+             printf("c=%d\n", c);
+          }
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int *FP;
+
+main(int argc, char *argv[ ], char *env[ ])
+{
+  int a,b,c;
+  
+  printf("enter main\n");
+  
+  printf("&argc=%p argv=%p env=%p\n", &argc, argv, env);
+  printf("&a=%8p &b=%8p &c=%8p\n", &a, &b, &c);
+
+
+  a=1; b=2; c=3;
+  A(a,b);
+  printf("exit main\n");
+}
+
+int A(int x, int y)
+{
+  int d,e,f;
+  printf("enter A\n");
+  printf("&d=%8p &e=%8p &f=%8p\n", &d, &e, &f);
+  d=4; e=5; f=6;
+  B(d,e);
+  printf("exit A\n");
+}
+
+int B(int x, int y)
+{
+  int g,h,i;
+  printf("enter B\n");
+  printf("&g=%8p &h=%8p &i=%8p\n", &g, &h, &i);
+  g=7; h=8; i=9;
+  C(g,h);
+  printf("exit B\n");
+}
+
+int C(int x, int y)
+{
+  int u, v, w, i, *p;
+
+  printf("enter C\n");
+  printf("&u=%8p &v=%8p &w=%8p\n &i=%8p\n &p=%8p\n", &u, &v, &w, &i, &p);
+  u=10; v=11; w=12; i=13, p=14;
+
+  p = (int *)&p;
+  printf("p = %8p\n", p);
+
+  //for(int index = 0; index < 128; index++){
+  int index = 0;
+  while(index != 128){
+        printf("%d\n", *p);
+        p--;
+        index++;
+  }
+
+
+  printf("=============================\n");
+
+
+  asm("movl %ebp, FP");
+  while(*FP != 0){
+    printf("%8p\n", FP);
+    *FP++;
+  }
+
+}
+
+
+
+
+
+enter main
+&argc=0xbff6fa60 argv=0xbff6faf4 env=0xbff6fafc
+&a=0xbff6fa44 &b=0xbff6fa48 &c=0xbff6fa4c
+enter A
+&d=0xbff6fa14 &e=0xbff6fa18 &f=0xbff6fa1c
+enter B
+&g=0xbff6f9e4 &h=0xbff6f9e8 &i=0xbff6f9ec
+enter C
+&u=0xbff6f9a8 &v=0xbff6f9ac &w=0xbff6f9b0
+ &i=0xbff6f9b4
+ &p=0xbff6f9b8
+p = 0xbff6f9b8
+-1074333256
+13
+12
+11
+10
+0
+0
+-1216671744
+-1218140495
+-1074333256
+-1074333260
+-1074333264
+-1074333268
+-1074333268
+134514695
+134514254
+-1216671744
+0
+0
+-1216671744
+-1074333308
+134514695
+-1216668992
+-1218100561
+-1074333240
+0
+0
+-1216671744
+-1218140495
+-1216671744
+7
+926168881
+909194802
+959512586
+-1216668992
+-1217955947
+-1216665448
+-1216668992
+-1216668992
+-1216671744
+8
+-1216577536
+-1216668992
+-1217966625
+8
+-1216577536
+-1216668992
+-1217958272
+-1216668992
+-1216577536
+1
+-1217963103
+-1216671744
+-1217520525
+8
+-1217959090
+-1216665448
+10
+8
+-1218362312
+8
+-1216577536
+-1216668992
+-1217966625
+-1216577536
+-1216668844
+-1216668992
+-1216671744
+8
+-1216577536
+1
+-1217963103
+-1216671744
+-1217520525
+-1216577536
+8
+-1216668992
+11229533
+-1074333520
+3
+-1216566504
+0
+-1216413696
+-1216504948
+1
+-1216510684
+-1216566504
+1
+-1218407572
+-1216413696
+1
+-1216410588
+134513197
+2
+7
+-1216482520
+0
+-1216567208
+-1218362504
+134513267
+-1218338819
+-1216512563
+112
+0
+-1216412324
+-1216547335
+-1074333656
+-1074333648
+-1074333452
+0
+8
+-1216461101
+112
+7
+-1216413696
+-1216461400
+0
+-1216412324
+1
+0
+1
+-1216565752
+0
+-1216410988
+-1074333648
+-1216548036
+-1074333656
+-1216510038
+=============================
+0xbff6f9c8
+0xbff6f9cc
+0xbff6f9d0
+0xbff6f9d4
+0xbff6f9d8
+0xbff6f9dc
+0xbff6f9e0
+0xbff6f9e4
+0xbff6f9e8
+0xbff6f9ec
+exit B
+exit A
+exit main
